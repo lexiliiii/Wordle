@@ -15,4 +15,16 @@ public class WordValidatorTest {
     public void isValidWord_false_tooLong() {
         assertFalse(wordValidator.isValidWord("DOGGIE"));
     }
+
+    @Test
+    public void checkIsAllLetters(){
+//        assertTrue(wordValidator.isAllLetters("apple"));
+//        assertTrue(wordValidator.isAllLetters("APPLE"));
+//        assertTrue(wordValidator.isAllLetters("Apple"));
+//        assertTrue(wordValidator.isAllLetters("ApPlE"));
+//        assertTrue(!wordValidator.isAllLetters("a1pple"));
+//        assertTrue(!wordValidator.isAllLetters("a@pple"));
+        assertTrue(wordValidator.isAllLetters(""));
+
+    }
 }
