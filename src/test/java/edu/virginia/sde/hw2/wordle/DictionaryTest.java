@@ -89,40 +89,27 @@ class DictionaryTest {
 //        assertTrue(wordSet.equals(wordSet1));
 //    }
 
-//    @Test
-//    void sizeCheck(){
-//        var dictionary = new Dictionary();
-//        var wordSet = dictionary.getWordSet();
-//        assertTrue(wordSet.size() == 0);
-//        wordSet.add("apple");
-//        wordSet.add("banana");
-//        wordSet.add("pineapple");
-//        wordSet.add("wwrong");
-//        int size = wordSet.size();
-//        assertTrue(size == 3);
-//    }
-
     @Test
     void sizeCheck(){
         var dictionary = new Dictionary();
-        assertTrue(dictionary.size() == 0); // Use Dictionary's size method
+        assertTrue(dictionary.size() == 0);
 
-        dictionary.addWord("apple");    // Use Dictionary's method to add words, assuming such a method exists
+        dictionary.addWord("apple");
         dictionary.addWord("banana");
         dictionary.addWord("pineapple");
-        dictionary.addWord("wrong");    // Assuming you handle adding only valid words within addWord method
+        dictionary.addWord("wrong");
 
-        int size = dictionary.size();   // Again, use Dictionary's size method
-        assertTrue(size == 3);          // Assuming you want the size to be 3 after adding the words
+        int size = dictionary.size();
+        assertTrue(size == 3);
     }
 
 
     @Test
     void checkEmpty(){
         var dictionary = new Dictionary();
-        var wordSet = dictionary.getWordSet();
-        wordSet.add("apple");
-        assertFalse(wordSet.isEmpty());
-//        assertTrue(!wordSet.isEmpty());
+        assertTrue(dictionary.isEmpty());
+        dictionary.addWord("apple");
+//        assertFalse(dictionary.isEmpty());
+        assertTrue(!dictionary.isEmpty());
     }
 }
