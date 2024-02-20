@@ -31,6 +31,7 @@ class DictionaryTest {
     }
 
 
+
     @Test
     void checkIsEmpty(){
         var dictionary = new Dictionary();
@@ -40,5 +41,17 @@ class DictionaryTest {
         assertTrue(!dictionary.isEmpty());
     }
 
+    @Test
+    void checkSize(){
+        var dictionary = new Dictionary();
+        assertTrue(dictionary.size() == 0);
+
+        dictionary.addWord("apple");
+        dictionary.addWord("banana");
+        dictionary.addWord("pineapple");
+        dictionary.addWord("wrong");
+
+        assertTrue(dictionary.size() == 3);
+    }
 
 }
