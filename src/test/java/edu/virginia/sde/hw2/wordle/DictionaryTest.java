@@ -29,14 +29,25 @@ class DictionaryTest {
         var wordSet = dictionary.getWordSet();
         assertTrue(wordSet.isEmpty());
     }
+
     @Test
     void caseInsensitive(){
         var dictionary = new Dictionary();
 
         var wordSet = dictionary.getWordSet();
         wordSet.add("APPLE");
+        wordSet.add("banana");
         assertTrue(wordSet.contains("apple"));
+        assertTrue(wordSet.contains("BANANA"));
     }
+//
+//    @Test
+//    void ableToAddWord(){
+//        var dictionary = new Dictionary();
+//
+//        var wordSet = dictionary.getWordSet();
+//        assertTrue(wordSet.add("apple"));
+//    }
 
     @Test
     void IllegalWords(){
@@ -44,7 +55,10 @@ class DictionaryTest {
 
         var wordSet = dictionary.getWordSet();
         wordSet.add("wocao");
+        wordSet.add("apple3");
         assertTrue(wordSet.isEmpty());
+//        wordSet.add("apple");
+//        assertTrue(wordSet.contains("apple"));
     }
 
     @Test
@@ -75,16 +89,33 @@ class DictionaryTest {
 //        assertTrue(wordSet.equals(wordSet1));
 //    }
 
+//    @Test
+//    void sizeCheck(){
+//        var dictionary = new Dictionary();
+//        var wordSet = dictionary.getWordSet();
+//        assertTrue(wordSet.size() == 0);
+//        wordSet.add("apple");
+//        wordSet.add("banana");
+//        wordSet.add("pineapple");
+//        wordSet.add("wwrong");
+//        int size = wordSet.size();
+//        assertTrue(size == 3);
+//    }
+
     @Test
     void sizeCheck(){
         var dictionary = new Dictionary();
-        var wordSet = dictionary.getWordSet();
-        wordSet.add("apple");
-        wordSet.add("banana");
-        wordSet.add("pineapple");
-        int size = wordSet.size();
-        assertTrue(size == 3);
+        assertTrue(dictionary.size() == 0); // Use Dictionary's size method
+
+        dictionary.addWord("apple");    // Use Dictionary's method to add words, assuming such a method exists
+        dictionary.addWord("banana");
+        dictionary.addWord("pineapple");
+        dictionary.addWord("wrong");    // Assuming you handle adding only valid words within addWord method
+
+        int size = dictionary.size();   // Again, use Dictionary's size method
+        assertTrue(size == 3);          // Assuming you want the size to be 3 after adding the words
     }
+
 
     @Test
     void checkEmpty(){
