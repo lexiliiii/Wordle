@@ -30,6 +30,49 @@ class DictionaryTest {
         assertTrue(wordSet.isEmpty());
     }
 
+    @Test
+    void addWords(){
+
+    }
+
+//    @Test
+//    void checkLowercase(){
+//        var dictionary = new Dictionary();
+//        dictionary.addWord("apple");
+//        dictionary.addWord("banana");
+//        dictionary.addWord("pineapple");
+//        var wordSet = dictionary.getWordSet();
+//
+//        for(String s : wordSet){
+//            var temp = s.toLowerCase();
+//            assertTrue(temp.equals(s));
+//        }
+//    }
+
+
+    @Test
+    void checkContains(){
+        var dictionary = new Dictionary();
+
+        assertTrue(!dictionary.contains("apple"));
+        assertTrue(!dictionary.contains("black"));
+        assertTrue(!dictionary.contains("camel"));
+
+        dictionary.addWord("apple");
+        dictionary.addWord("black");
+
+        assertTrue(dictionary.contains("apple"));
+        assertTrue(dictionary.contains("black"));
+        assertTrue(!dictionary.contains("camel"));
+//        var dictionary = new Dictionary();
+//        var wordSet = dictionary.getWordSet();
+//
+//        dictionary.addWord("apple");
+//
+//        assertTrue(dictionary.contains("apple"));
+//        assertTrue(dictionary.contains("APPLE"));
+        assertTrue(!dictionary.contains("BANANA"));
+    }
 
 
     @Test
