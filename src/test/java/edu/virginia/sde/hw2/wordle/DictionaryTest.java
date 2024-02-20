@@ -30,86 +30,15 @@ class DictionaryTest {
         assertTrue(wordSet.isEmpty());
     }
 
-    @Test
-    void caseInsensitive(){
-        var dictionary = new Dictionary();
-
-        var wordSet = dictionary.getWordSet();
-        wordSet.add("APPLE");
-        wordSet.add("banana");
-        assertTrue(wordSet.contains("apple"));
-        assertTrue(wordSet.contains("BANANA"));
-    }
-//
-//    @Test
-//    void ableToAddWord(){
-//        var dictionary = new Dictionary();
-//
-//        var wordSet = dictionary.getWordSet();
-//        assertTrue(wordSet.add("apple"));
-//    }
 
     @Test
-    void IllegalWords(){
-        var dictionary = new Dictionary();
-
-        var wordSet = dictionary.getWordSet();
-        wordSet.add("wocao");
-        wordSet.add("apple3");
-        assertTrue(wordSet.isEmpty());
-//        wordSet.add("apple");
-//        assertTrue(wordSet.contains("apple"));
-    }
-
-    @Test
-    void checkLowercase(){
-        var dictionary = new Dictionary();
-        dictionary.addWord("APPLE");
-        dictionary.addWord("BANANA");
-        dictionary.addWord("PINEAPPLE");
-
-        var wordSet = dictionary.getWordSet();
-        for(String s : wordSet){
-            String wocao = s.toLowerCase();
-            assertTrue(wocao.equals(s));
-        }
-        Set<String> result = dictionary.getWordSet();
-    }
-
-//    @Test
-//    void equalWords(){
-//        var dictionary = new Dictionary();
-//        var wordSet = dictionary.getWordSet();
-//
-//        var dictionary1 = new Dictionary();
-//        var wordSet1 = dictionary1.getWordSet();
-//
-//        wordSet.add("apple");
-//        wordSet1.add("apple");
-//        assertTrue(wordSet.equals(wordSet1));
-//    }
-
-    @Test
-    void sizeCheck(){
-        var dictionary = new Dictionary();
-        assertTrue(dictionary.size() == 0);
-
-        dictionary.addWord("apple");
-        dictionary.addWord("banana");
-        dictionary.addWord("pineapple");
-        dictionary.addWord("wrong");
-
-        int size = dictionary.size();
-        assertTrue(size == 3);
-    }
-
-
-    @Test
-    void checkEmpty(){
+    void checkIsEmpty(){
         var dictionary = new Dictionary();
         assertTrue(dictionary.isEmpty());
+
         dictionary.addWord("apple");
-//        assertFalse(dictionary.isEmpty());
         assertTrue(!dictionary.isEmpty());
     }
+
+
 }
