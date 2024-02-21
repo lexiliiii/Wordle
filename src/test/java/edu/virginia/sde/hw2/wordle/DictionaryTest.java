@@ -43,11 +43,13 @@ class DictionaryTest {
 
         dictionary.addWord("apple");
         dictionary.addWord("black");
-        dictionary.addWord("APPLE");
+        dictionary.addWord("CAMEL");
+        dictionary.addWord("teach");
 
         assertTrue(dictionary.contains("apple"));
         assertTrue(dictionary.contains("black"));
-        assertFalse(dictionary.contains("camel"));
+        assertTrue(dictionary.contains("camel"));
+        assertTrue(dictionary.contains("TEACH"));
 
     }
 
