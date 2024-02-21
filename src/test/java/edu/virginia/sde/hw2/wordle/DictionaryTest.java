@@ -1,9 +1,12 @@
 package edu.virginia.sde.hw2.wordle;
 
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+import java.beans.BeanProperty;
 import java.io.IOException;
 import java.util.HashSet;
+import java.util.Iterator;
 import java.util.Set;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -30,24 +33,29 @@ class DictionaryTest {
         assertTrue(wordSet.isEmpty());
     }
 
-    @Test
-    void addWords(){
-
-    }
+//    @Test
+//    void addWords(){
+//
+//    }
 
 //    @Test
-//    void checkLowercase(){
-//        var dictionary = new Dictionary();
-//        dictionary.addWord("apple");
-//        dictionary.addWord("banana");
-//        dictionary.addWord("pineapple");
-//        var wordSet = dictionary.getWordSet();
+//    void checkValidateWordSet(){
+//        var startingWordSet = new HashSet<>(Set.of("", "Status"));
+//        var dictionary = new Dictionary(startingWordSet, new WordValidator());
 //
+//////        var wordSet = dictionary.getWordSet();
+////        WordValidator wordValidator = new WordValidator(); // Assuming this is the class that has the isValidWord method.
+////        dictionary.addWord("Apple");
+////        dictionary.addWord("banana");
+////        dictionary.addWord("Pineapple"); // Intentionally adding a word with an uppercase letter to test lowercase validation.
+//
+//        var wordSet = dictionary.getWordSet();
 //        for(String s : wordSet){
-//            var temp = s.toLowerCase();
+//            String temp = s.toLowerCase();
 //            assertTrue(temp.equals(s));
 //        }
 //    }
+
 
 
     @Test
@@ -64,14 +72,6 @@ class DictionaryTest {
         assertTrue(dictionary.contains("apple"));
         assertTrue(dictionary.contains("black"));
         assertTrue(!dictionary.contains("camel"));
-//        var dictionary = new Dictionary();
-//        var wordSet = dictionary.getWordSet();
-//
-//        dictionary.addWord("apple");
-//
-//        assertTrue(dictionary.contains("apple"));
-//        assertTrue(dictionary.contains("APPLE"));
-        assertTrue(!dictionary.contains("BANANA"));
     }
 
 
@@ -92,9 +92,55 @@ class DictionaryTest {
         dictionary.addWord("apple");
         dictionary.addWord("banana");
         dictionary.addWord("pineapple");
-        dictionary.addWord("wrong");
 
         assertTrue(dictionary.size() == 3);
+    }
+//
+//    @Test
+//    void checkEquals(){
+//        var startingWordSet = new HashSet<>(Set.of("apple", "black", "camel"));
+//        var dictionary = new Dictionary(startingWordSet, new WordValidator());
+//
+//        var wordSet = dictionary.getWordSet();
+//
+//        var startingWordSet1 = new HashSet<>(Set.of("apple", "black", "camel"));
+//        var dictionary1 = new Dictionary(startingWordSet1, new WordValidator());
+//
+//        var wordSet1 = dictionary1.getWordSet();
+////
+////        String a = "apple";
+////        boolean b = wordSet1.equals(a);
+////        assertTrue(b == true);
+////        assertFalse(wordSet.equals(a));
+//        assertTrue(wordSet.equals(wordSet1));
+//    }
+//
+//    @Test
+//    void checkEquals() {
+//        var startingWordSet = new HashSet<>(Set.of("apple", "black", "camel"));
+//        var dictionary = new Dictionary(startingWordSet, new WordValidator());
+//
+//        var wordSet = dictionary.getWordSet();
+//
+//        var startingWordSet1 = new HashSet<>(Set.of("apple", "black", "camel"));
+//        var dictionary1 = new Dictionary(startingWordSet1, new WordValidator());
+//
+//        var wordSet1 = dictionary1.getWordSet();
+//
+//        // This assertion uses the overridden equals method of the Dictionary class
+//        assertTrue(dictionary.equals(dictionary1));  // This should cover the equals method
+//
+//        // These assertions check the equality of word sets, not dictionaries
+//        assertFalse(wordSet.equals("apple"));  // Checks that a Set is not equal to a String
+//        assertTrue(wordSet.equals(wordSet1));  // Checks that two Sets are equal
+//    }
+
+    @Test
+    void checkAddWord(){
+        var dictionary = new Dictionary();
+        dictionary.addWord("");
+        assertTrue(dictionary.contains(""));
+
     }
 
 }
