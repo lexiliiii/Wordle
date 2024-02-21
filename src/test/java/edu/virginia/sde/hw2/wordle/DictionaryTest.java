@@ -33,10 +33,6 @@ class DictionaryTest {
         assertTrue(wordSet.isEmpty());
     }
 
-//    @Test
-//    void addWords(){
-//
-//    }
 
 //    @Test
 //    void checkValidateWordSet(){
@@ -95,14 +91,23 @@ class DictionaryTest {
 
         assertTrue(dictionary.size() == 3);
     }
-//
-//    @Test
-//    void checkEquals(){
-//        var startingWordSet = new HashSet<>(Set.of("apple", "black", "camel"));
-//        var dictionary = new Dictionary(startingWordSet, new WordValidator());
-//
-//        var wordSet = dictionary.getWordSet();
-//
+
+    @Test
+    void checkEquals(){
+        var startingWordSet = new HashSet<>(Set.of(""));
+        var dictionary = new Dictionary(startingWordSet, new WordValidator());
+
+//        dictionary.equals("");
+
+        assertFalse(dictionary.equals(""));
+
+        var dictionary1 = new Dictionary();
+        dictionary1.addWord("");
+
+        assertTrue(dictionary.equals(dictionary1));
+//        assertTrue(!(a instanceof Dictionary otherDictionary));
+//        assertFalse(wordSet.equals(""));
+
 //        var startingWordSet1 = new HashSet<>(Set.of("apple", "black", "camel"));
 //        var dictionary1 = new Dictionary(startingWordSet1, new WordValidator());
 //
@@ -113,27 +118,7 @@ class DictionaryTest {
 ////        assertTrue(b == true);
 ////        assertFalse(wordSet.equals(a));
 //        assertTrue(wordSet.equals(wordSet1));
-//    }
-//
-//    @Test
-//    void checkEquals() {
-//        var startingWordSet = new HashSet<>(Set.of("apple", "black", "camel"));
-//        var dictionary = new Dictionary(startingWordSet, new WordValidator());
-//
-//        var wordSet = dictionary.getWordSet();
-//
-//        var startingWordSet1 = new HashSet<>(Set.of("apple", "black", "camel"));
-//        var dictionary1 = new Dictionary(startingWordSet1, new WordValidator());
-//
-//        var wordSet1 = dictionary1.getWordSet();
-//
-//        // This assertion uses the overridden equals method of the Dictionary class
-//        assertTrue(dictionary.equals(dictionary1));  // This should cover the equals method
-//
-//        // These assertions check the equality of word sets, not dictionaries
-//        assertFalse(wordSet.equals("apple"));  // Checks that a Set is not equal to a String
-//        assertTrue(wordSet.equals(wordSet1));  // Checks that two Sets are equal
-//    }
+    }
 
     @Test
     void checkAddWord(){
