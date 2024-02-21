@@ -23,8 +23,6 @@ public class Dictionary {
      */
     private final WordValidator wordValidator;
 
-    private int size;
-
     /**
      * Creates a new empty Dictionary
      */
@@ -41,7 +39,6 @@ public class Dictionary {
         validateWordSet(wordSet, wordValidator);
         this.wordSet = wordSet;
         this.wordValidator = wordValidator;
-        this.size = 0;
     }
 
     private void validateWordSet(Set<String> wordSet, WordValidator wordValidator) {
@@ -70,7 +67,7 @@ public class Dictionary {
      * Returns the number of words in the dictionary
      */
     public int size() {
-        return size;
+        return wordSet.size();
     }
 
     /**
@@ -97,8 +94,7 @@ public class Dictionary {
             throw new IllegalArgumentException(
                     String.format("Cannot add %s to dictionary, as it is invalid for Wordle", word));
         }
-        wordSet.add(word.toLowerCase());
-        size ++;
+        wordSet.add(word);
     }
 
 
