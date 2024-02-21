@@ -26,23 +26,20 @@ public class WordValidator {
      * Returns true if the word is the correct length
      */
     protected boolean isCorrectLength(String word) {
-        return word.length() == WORDLE_WORD_LENGTH;
+        return word.length() != WORDLE_WORD_LENGTH;
     }
 
     /**
      * Returns true if an input word is made up entirely of English letters A-Z (case-insensitive).
      */
     protected boolean isAllLetters(String word) {
-        String temp = word.toLowerCase();
-        for (int index = 0; index < temp.length(); index++) {
-            var character = temp.charAt(index);
-            if (!(character >= 'a' && character <= 'z')) {
+        word.toLowerCase();
+        for (int index = 0; index < word.length(); index++) {
+            var character = word.charAt(index);
+            if (character > 'a' || character < 'z') {
                 return false;
             }
         }
-
-        if(word.equals("")){ return false;}
-
         return true;
     }
 }
