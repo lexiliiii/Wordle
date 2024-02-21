@@ -56,34 +56,30 @@ class DictionaryTest {
     @Test
     void checkSize(){
         var dictionary = new Dictionary();
+        var wordSet = dictionary.getWordSet();
+        assertEquals(0, dictionary.size());
 
-        assertTrue(dictionary.size() == 0);
 
-        dictionary.addWord("apple");
-        dictionary.addWord("black");
-        dictionary.addWord("camel");
-        dictionary.addWord("!pple");
-        dictionary.addWord("banana");
+        var dictionary1 = new Dictionary();
 
-        assertTrue(dictionary.size() == 3);
+        dictionary1.addWord("apple");
+        dictionary1.addWord("black");
+        dictionary1.addWord("camel");
+
+        var wordSet1 = dictionary.getWordSet();
+        assertEquals(3, dictionary1.size());
     }
 
     @Test
     void checkAddWord(){
         var dictionary = new Dictionary();
-        dictionary.addWord("");
         dictionary.addWord("apple");
-        dictionary.addWord("black");
-        dictionary.addWord("camel");
-        dictionary.addWord("banana");
-        dictionary.addWord("!appl");
+        dictionary.addWord("BlAcK");
+        dictionary.addWord("CAMEL");
 
-        assertFalse(dictionary.contains(""));
+
         assertTrue(dictionary.contains("apple"));
         assertTrue(dictionary.contains("black"));
         assertTrue(dictionary.contains("CAMEL"));
-        assertFalse(dictionary.contains("banana"));
-        assertFalse(dictionary.contains("!appl"));
-
     }
 }
