@@ -28,6 +28,7 @@ class DictionaryTest {
     @Test
     void getWordSet_initiallyEmpty() {
         var dictionary = new Dictionary();
+
         var wordSet = dictionary.getWordSet();
         assertTrue(wordSet.isEmpty());
     }
@@ -55,13 +56,17 @@ class DictionaryTest {
     @Test
     void checkSize(){
         var dictionary = new Dictionary();
+        var wordSet = dictionary.getWordSet();
         assertEquals(0, dictionary.size());
 
 
         var dictionary1 = new Dictionary();
+
         dictionary1.addWord("apple");
         dictionary1.addWord("black");
         dictionary1.addWord("camel");
+
+        var wordSet1 = dictionary.getWordSet();
         assertEquals(3, dictionary1.size());
     }
 
@@ -71,6 +76,7 @@ class DictionaryTest {
         dictionary.addWord("apple");
         dictionary.addWord("BlAcK");
         dictionary.addWord("CAMEL");
+
 
         assertTrue(dictionary.contains("apple"));
         assertTrue(dictionary.contains("black"));
