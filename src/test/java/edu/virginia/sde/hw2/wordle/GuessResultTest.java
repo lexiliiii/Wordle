@@ -12,6 +12,8 @@ class GuessResultTest {
     public void getLetterResultTest() {
         GuessResult result = new GuessResult("guess", "guess");
         LetterResult[] expected = {LetterResult.GREEN,LetterResult.GREEN,LetterResult.GREEN,LetterResult.GREEN,LetterResult.GREEN};
-        assertArrayEquals(expected, result.getLetterResults());
+        assertArrayEquals( expected, result.getLetterResults() );
     }
+
+
 }

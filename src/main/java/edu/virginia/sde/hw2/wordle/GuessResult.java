@@ -62,8 +62,31 @@ public class GuessResult {
      * function is case-insensitive.
      */
     public LetterResult[] getLetterResults() {
+        LetterResult[] result = new LetterResult[ 5 ];
+        String g = getGuess().toLowerCase();
+        String a = getAnswer().toLowerCase();
 
-        return null;
+        for ( int i = 0; i < g.length(); i++ ){
+            if ( g.charAt( i ) == a.charAt( i ) ){
+                result[ i ] = LetterResult.GREEN;
+            }
+            else{
+                boolean in = false;
+                for ( int k = 0; k < a.length(); k++ ){
+                    if ( g.charAt( i ) == a.charAt( k ) ){
+                        in = true;
+                    }
+                }
+                if ( in ){
+                    result[ i ] = LetterResult.YELLOW;
+                }
+                else{
+                    result[ i ] = LetterResult.GRAY;
+                }
+            }
+        }
+
+        return result;
     }
 
 
