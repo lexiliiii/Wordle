@@ -62,7 +62,7 @@ public class GuessResult {
      * function is case-insensitive.
      */
     public LetterResult[] getLetterResults() {
-        //TODO: Stub
+
         return null;
     }
 
