@@ -76,7 +76,7 @@ class DictionaryTest {
         dictionary1.addWord("black");
         dictionary1.addWord("camel");
 
-        assertTrue(dictionary.size() == 3);
+        assertTrue(dictionary1.size() == 3);
     }
 
     @Test
