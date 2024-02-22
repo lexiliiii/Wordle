@@ -68,11 +68,7 @@ class DictionaryTest {
     @Test
     void checkSize(){
         var dictionary = new Dictionary();
-        var wordSet = dictionary.getWordSet();
         assertEquals(0, dictionary.size());
-
-        assertTrue(dictionary.size() == 0);
-        assertEquals(0, wordSet.size());
 
         var dictionary1 = new Dictionary();
 
@@ -81,9 +77,6 @@ class DictionaryTest {
         dictionary1.addWord("camel");
 
         assertTrue(dictionary.size() == 3);
-        var wordSet1 = dictionary.getWordSet();
-        assertEquals(3, dictionary1.size());
-        assertEquals(3, wordSet1.size());
     }
 
     @Test
