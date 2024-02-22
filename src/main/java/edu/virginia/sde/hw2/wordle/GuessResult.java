@@ -22,6 +22,11 @@ public class GuessResult {
      */
     public GuessResult(String guess, String answer) {
         validateWordLengths(guess, answer);
+        WordValidator x = new WordValidator();
+        boolean valid = x.isValidWord( guess );
+        if ( !valid ){
+            throw new IllegalArgumentException("Bad Input!");
+        }
         this.guess = guess;
         this.answer = answer;
     }
