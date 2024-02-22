@@ -82,12 +82,13 @@ class DictionaryTest {
     @Test
     void checkAddWord(){
         var dictionary = new Dictionary();
-        dictionary.addWord("");
+        assertThrows(IllegalArgumentException.class, () -> dictionary.addWord(""));
         dictionary.addWord("apple");
         dictionary.addWord("black");
         dictionary.addWord("camel");
-        dictionary.addWord("banana");
-        dictionary.addWord("!appl");
+        assertThrows(IllegalArgumentException.class, () -> dictionary.addWord("banana"));
+        assertThrows(IllegalArgumentException.class, () -> dictionary.addWord("a@ple"));
+        assertThrows(IllegalArgumentException.class, () -> dictionary.addWord("a!ple"));
         dictionary.addWord("WHITE");
         dictionary.addWord("TeaCh");
 
@@ -98,8 +99,8 @@ class DictionaryTest {
         assertTrue(dictionary.contains("CAMEL"));
         assertFalse(dictionary.contains("banana"));
         assertFalse(dictionary.contains("!appl"));
-        assertFalse(dictionary.contains("white"));
-        assertFalse(dictionary.contains("teach"));
+        assertTrue(dictionary.contains("white"));
+        assertTrue(dictionary.contains("teach"));
 
     }
 }
