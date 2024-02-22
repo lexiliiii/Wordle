@@ -71,4 +71,14 @@ class GuessResultTest {
     }
 
 
+    @Test
+    public void duplicateResultTest_rightSingleToTriple() {
+        GuessResult result = new GuessResult("loopy", "puppy");
+        LetterResult[] expected = { GRAY, GRAY, GRAY, GREEN, GREEN };
+        assertArrayEquals( expected, result.getLetterResults() );
+    }
+
+
+
+
 }
