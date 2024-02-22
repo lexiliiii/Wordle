@@ -22,6 +22,7 @@ public class Dictionary {
      * Determines what words are allowed in the dictionary. See {@link WordValidator#isValidWord(String)}
      */
     private final WordValidator wordValidator;
+    private int size;
 
     /**
      * Creates a new empty Dictionary
@@ -67,7 +68,7 @@ public class Dictionary {
      * Returns the number of words in the dictionary
      */
     public int size() {
-        return wordSet.size();
+        return size;
     }
 
     /**
@@ -94,7 +95,8 @@ public class Dictionary {
             throw new IllegalArgumentException(
                     String.format("Cannot add %s to dictionary, as it is invalid for Wordle", word));
         }
-        wordSet.add(word);
+        wordSet.add(word.toLowerCase());
+        size ++;
     }
 
 
