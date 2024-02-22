@@ -52,6 +52,7 @@ class DictionaryTest {
 
     }
 
+
     @Test
     void checkSize(){
         var dictionary = new Dictionary();
