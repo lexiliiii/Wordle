@@ -99,6 +99,11 @@ class GuessResultTest {
         assertThrows( Exception.class, () -> new GuessResult("12345", "apple").getLetterResults());
     }
 
+    @Test
+    public void badInputResultTest_Length() {
+        assertThrows( Exception.class, () -> new GuessResult("red", "apple").getLetterResults());
+    }
+
 
 
 }
