@@ -27,6 +27,12 @@ class GuessResultTest {
         assertArrayEquals( expected, result.getLetterResults() );
     }
 
+    @Test
+    public void upperCaseGuessResultTest() {
+        GuessResult result = new GuessResult("BRAIN", "basic");
+        LetterResult[] expected = { LetterResult.GREEN, GRAY, YELLOW, GREEN, GRAY };
+        assertArrayEquals( expected, result.getLetterResults() );
+    }
 
 
 
