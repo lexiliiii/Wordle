@@ -17,9 +17,15 @@ public class WordValidatorTest {
     }
 
     @Test
-    public void getLetterResultTest() {
+    public void checkIsAllLetters(){
+        assertTrue(wordValidator.isAllLetters(""));
+        assertTrue(wordValidator.isAllLetters("apple"));
+        assertTrue(wordValidator.isAllLetters("APPLE"));
+        assertTrue(wordValidator.isAllLetters("Apple"));
+        assertTrue(wordValidator.isAllLetters("ApPlE"));
+        assertTrue(wordValidator.isAllLetters("banana"));
+        assertFalse(wordValidator.isAllLetters("a1ppl"));
+        assertFalse(wordValidator.isAllLetters("a@ppl"));
 
     }
-
-
 }
