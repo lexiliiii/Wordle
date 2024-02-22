@@ -88,8 +88,8 @@ class DictionaryTest {
         dictionary.addWord("camel");
         dictionary.addWord("banana");
         dictionary.addWord("!appl");
-        dictionary.addWord("BlAcK");
-        dictionary.addWord("CAMEL");
+        dictionary.addWord("WHITE");
+        dictionary.addWord("TeaCh");
 
 
         assertFalse(dictionary.contains(""));
@@ -98,6 +98,8 @@ class DictionaryTest {
         assertTrue(dictionary.contains("CAMEL"));
         assertFalse(dictionary.contains("banana"));
         assertFalse(dictionary.contains("!appl"));
+        assertFalse(dictionary.contains("white"));
+        assertFalse(dictionary.contains("teach"));
 
     }
 }
