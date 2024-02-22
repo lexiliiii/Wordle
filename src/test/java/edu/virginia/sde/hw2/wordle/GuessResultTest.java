@@ -11,9 +11,23 @@ class GuessResultTest {
     @Test
     public void getLetterResultTest() {
         GuessResult result = new GuessResult("guess", "guess");
-        LetterResult[] expected = {LetterResult.GREEN,LetterResult.GREEN,LetterResult.GREEN,LetterResult.GREEN,LetterResult.GREEN};
+        LetterResult[] expected = {
+                LetterResult.GREEN,
+                LetterResult.GREEN,
+                LetterResult.GREEN,
+                LetterResult.GREEN,
+                LetterResult.GREEN };
         assertArrayEquals( expected, result.getLetterResults() );
     }
+
+    @Test
+    public void regularResultTest() {
+        GuessResult result = new GuessResult("brain", "basic");
+        LetterResult[] expected = { LetterResult.GREEN, GRAY, YELLOW, GREEN, GRAY };
+        assertArrayEquals( expected, result.getLetterResults() );
+    }
+
+
 
 
 }
