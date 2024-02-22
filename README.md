@@ -2,9 +2,9 @@
 # Homework 2 - Testing
 
 ## Authors
-1) Name, netid, [GitHub profile name]
-2) Name, netid, [GitHub profile name]
-3) Name, netid, [GitHub profile name]
+1) Sophie Yan, drc5dr, [sophieyann]
+2) Enhui Li, cmk8wq, [lexiliiii]
+3) Rui Xiao, nsq8va, [IrisssXiao]
 
 ## To Run
 
@@ -14,24 +14,19 @@
 
 List the primary contributions of each author. It is recommended to update this with your contributions after each coding session.:
 
-### [Author 1 - replace this with their name]
+### [Sophie Yan]
 
-* Author 1 contributions
-* as a bulleted list
-* each line starts with an asterisk and a space
+* Handled Part B, the Black-Box Testing on GuessResult.
 
-### [Author 2 - replace this with their name]
+### [Enhui Li]
 
-* Author 2 contributions
-* as a bulleted list
-* each line starts with an asterisk and a space
+* Handled Part A, the White-Box Testing on WordleDictionary.
 
-### [Author 3 - replace this with their name]
 
-* Author 3 contributions
-* as a bulleted list
-* each line starts with an asterisk and a space
+### [Rui Xiao]
+
+* Handled Part C, the Black-box Testing on Game.
 
 ## Issues
 
-List any known issues (bugs, incorrect behavior, etc.) at the time of submission.
+Perfect!
