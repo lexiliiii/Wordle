@@ -56,5 +56,11 @@ class GuessResultTest {
         assertArrayEquals( expected, result.getLetterResults() );
     }
 
+    @Test
+    public void duplicateResultTest_rightDoubleToDouble() {
+        GuessResult result = new GuessResult("canal", "salad");
+        LetterResult[] expected = { GRAY, GREEN, GRAY, GREEN, YELLOW };
+        assertArrayEquals( expected, result.getLetterResults() );
+    }
 
 }
