@@ -15,4 +15,11 @@ public class WordValidatorTest {
     public void isValidWord_false_tooLong() {
         assertFalse(wordValidator.isValidWord("DOGGIE"));
     }
+
+    @Test
+    public void getLetterResultTest() {
+
+    }
+
+
 }

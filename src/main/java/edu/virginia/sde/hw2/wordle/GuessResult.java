@@ -1,6 +1,8 @@
 package edu.virginia.sde.hw2.wordle;
 
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 
 import static edu.virginia.sde.hw2.wordle.LetterResult.*;
 
@@ -20,6 +22,11 @@ public class GuessResult {
      */
     public GuessResult(String guess, String answer) {
         validateWordLengths(guess, answer);
+        WordValidator x = new WordValidator();
+        boolean valid = x.isValidWord( guess );
+        if ( !valid ){
+            throw new IllegalArgumentException("Bad Input!");
+        }
         this.guess = guess;
         this.answer = answer;
     }
@@ -62,8 +69,38 @@ public class GuessResult {
      * function is case-insensitive.
      */
     public LetterResult[] getLetterResults() {
-        //TODO: Stub
-        return null;
+        LetterResult[] result = new LetterResult[ 5 ];
+        String g = getGuess().toUpperCase();
+        String a = getAnswer().toUpperCase();
+
+        boolean[] usedRecord = { false, false, false, false, false };
+
+        for ( int i = 0; i < g.length(); i++ ) {
+            if ( g.charAt(i) == a.charAt(i) ) {
+                result[i] = LetterResult.GREEN;
+                usedRecord[ i ] = true;
+            }
+        }
+
+        for ( int i = 0; i < g.length(); i++ ){
+            if ( g.charAt(i) != a.charAt(i) ) {
+                boolean in = false;
+                boolean stop = false;
+                for ( int k = 0; k < a.length(); k++ ){
+                    if ( g.charAt( i ) == a.charAt( k ) && usedRecord[k] == false && stop == false ){
+//                        System.out.println("i: " + i + "; k:" + k + "; Used: " +usedRecord[k] );
+                        result[ i ] = LetterResult.YELLOW;
+                        usedRecord[ k ] = true;
+                        in = true;
+                        stop = true;
+                    }
+                }
+                if ( !in ){
+                    result[ i ] = LetterResult.GRAY;
+                }
+            }
+        }
+        return result;
     }
 
 
