@@ -94,6 +94,10 @@ class GuessResultTest {
     }
 
 
+    @Test
+    public void badInputResultTest_NotWord() {
+        assertThrows( Exception.class, () -> new GuessResult("12345", "apple").getLetterResults());
+    }
 
 
 
