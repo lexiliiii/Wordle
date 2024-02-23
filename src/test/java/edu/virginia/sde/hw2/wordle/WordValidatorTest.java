@@ -35,5 +35,4 @@ public class WordValidatorTest {
         assertFalse(wordValidator.isAllLetters("a@ppl"));
 
     }
-
 }
