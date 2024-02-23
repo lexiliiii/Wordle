@@ -86,4 +86,48 @@ class DictionaryTest {
     }
 
 
+    @Test
+    void checkAddEmptyString(){
+        var dictionary = new Dictionary();
+        assertThrows(IllegalArgumentException.class, () -> dictionary.addWord(""));
+    }
+
+    @Test
+    void checkAddWord(){
+        var dictionary = new Dictionary();
+        dictionary.addWord("apple");
+
+        assertTrue(dictionary.contains("apple"));
+    }
+
+    @Test
+    void checkAddUpperCase(){
+        var dictionary = new Dictionary();
+        dictionary.addWord("CAMEL");
+
+        assertTrue(dictionary.contains("camel"));
+    }
+
+    @Test
+    void AddLongWords(){
+        var dictionary = new Dictionary();
+        assertThrows(IllegalArgumentException.class, () -> dictionary.addWord("banana"));
+    }
+
+    @Test
+    void checkAddNotAWord(){
+        var dictionary = new Dictionary();
+        assertThrows(IllegalArgumentException.class, () -> dictionary.addWord("a!ple"));
+    }
+
+    @Test
+    void checkAddUnusualWord(){
+        var dictionary = new Dictionary();
+        dictionary.addWord("TeaCh");
+
+        assertTrue(dictionary.contains("teach"));
+
+    }
+
+
 }
