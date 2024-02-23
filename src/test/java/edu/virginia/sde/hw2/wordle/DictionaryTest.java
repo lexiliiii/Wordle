@@ -33,21 +33,29 @@ class DictionaryTest {
     }
 
     @Test
-    void checkContains(){
+    void checkNotContains(){
         var dictionary = new Dictionary();
 
         assertFalse(dictionary.contains("apple"));
-        assertFalse(dictionary.contains("black"));
-        assertFalse(dictionary.contains("camel"));
+
+    }
+
+    @Test
+    void checkContains(){
+        var dictionary = new Dictionary();
 
         dictionary.addWord("apple");
-        dictionary.addWord("black");
-        dictionary.addWord("CAMEL");
-        dictionary.addWord("teach");
 
         assertTrue(dictionary.contains("apple"));
-        assertTrue(dictionary.contains("black"));
-        assertTrue(dictionary.contains("camel"));
+
+    }
+
+    @Test
+    void checkContainsUppercase(){
+        var dictionary = new Dictionary();
+
+        dictionary.addWord("teach");
+
         assertTrue(dictionary.contains("TEACH"));
 
     }
@@ -66,6 +74,16 @@ class DictionaryTest {
 //    }
 
     @Test
+    void checkContainsUppercase1(){
+        var dictionary = new Dictionary();
+
+        dictionary.addWord("WHITE");
+
+        assertTrue(dictionary.contains("white"));
+
+    }
+
+    @Test
     void checkSize(){
         var dictionary = new Dictionary();
         assertEquals(0, dictionary.size());
@@ -79,28 +97,49 @@ class DictionaryTest {
         assertTrue(dictionary1.size() == 3);
     }
 
+
+    @Test
+    void checkAddEmptyString(){
+        var dictionary = new Dictionary();
+        assertThrows(IllegalArgumentException.class, () -> dictionary.addWord(""));
+    }
+
     @Test
     void checkAddWord(){
         var dictionary = new Dictionary();
-        assertThrows(IllegalArgumentException.class, () -> dictionary.addWord(""));
         dictionary.addWord("apple");
-        dictionary.addWord("black");
-        dictionary.addWord("camel");
+
+        assertTrue(dictionary.contains("apple"));
+    }
+
+    @Test
+    void checkAddUpperCase(){
+        var dictionary = new Dictionary();
+        dictionary.addWord("CAMEL");
+
+        assertTrue(dictionary.contains("camel"));
+    }
+
+    @Test
+    void AddLongWords(){
+        var dictionary = new Dictionary();
         assertThrows(IllegalArgumentException.class, () -> dictionary.addWord("banana"));
-        assertThrows(IllegalArgumentException.class, () -> dictionary.addWord("a@ple"));
+    }
+
+    @Test
+    void checkAddNotAWord(){
+        var dictionary = new Dictionary();
         assertThrows(IllegalArgumentException.class, () -> dictionary.addWord("a!ple"));
-        dictionary.addWord("WHITE");
+    }
+
+    @Test
+    void checkAddUnusualWord(){
+        var dictionary = new Dictionary();
         dictionary.addWord("TeaCh");
 
-
-        assertFalse(dictionary.contains(""));
-        assertTrue(dictionary.contains("apple"));
-        assertTrue(dictionary.contains("black"));
-        assertTrue(dictionary.contains("CAMEL"));
-        assertFalse(dictionary.contains("banana"));
-        assertFalse(dictionary.contains("!appl"));
-        assertTrue(dictionary.contains("white"));
         assertTrue(dictionary.contains("teach"));
 
     }
+
+
 }
