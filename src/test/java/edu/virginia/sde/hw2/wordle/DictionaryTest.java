@@ -60,6 +60,7 @@ class DictionaryTest {
 
     }
 
+
     @Test
     void checkContainsUppercase1(){
         var dictionary = new Dictionary();
