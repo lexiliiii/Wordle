@@ -52,6 +52,18 @@ class DictionaryTest {
 
     }
 
+//    @Test
+//    void checkSize(){
+//        var dictionary = new Dictionary();
+//        assertEquals(0, dictionary.size());
+//
+//
+//        var dictionary1 = new Dictionary();
+//        dictionary1.addWord("apple");
+//        dictionary1.addWord("black");
+//        dictionary1.addWord("camel");
+//        assertEquals(3, dictionary1.size());
+//    }
 
     @Test
     void checkSize(){
