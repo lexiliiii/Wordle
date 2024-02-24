@@ -76,13 +76,10 @@ class DictionaryTest {
         var dictionary = new Dictionary();
         assertEquals(0, dictionary.size());
 
-        var dictionary1 = new Dictionary();
+        var startingWordSet = new HashSet<>(Set.of("apple", "black", "camel"));
+        var dictionary1 = new Dictionary(startingWordSet, new WordValidator());
 
-        dictionary1.addWord("apple");
-        dictionary1.addWord("black");
-        dictionary1.addWord("camel");
-
-        assertTrue(dictionary1.size() == 3);
+        assertEquals(3,dictionary1.size());
     }
 
 
