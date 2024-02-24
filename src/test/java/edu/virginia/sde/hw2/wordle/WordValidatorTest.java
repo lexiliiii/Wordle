@@ -44,7 +44,6 @@ public class WordValidatorTest {
 
     }
 
-
     @Test
     public void containsSymbolIsAllLetters(){
         assertFalse(wordValidator.isAllLetters("a@ppl"));
