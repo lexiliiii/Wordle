@@ -69,7 +69,7 @@ public class Dictionary {
      * Returns the number of words in the dictionary
      */
     public int size() {
-        return wordSet.size();
+        return size;
     }
 
     /**
