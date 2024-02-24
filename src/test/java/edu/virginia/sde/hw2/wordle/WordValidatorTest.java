@@ -14,12 +14,23 @@ public class WordValidatorTest {
     }
     @Test
     public void isValidWord_false_tooLong() {
+
         assertFalse(wordValidator.isValidWord("DOGGIE"));
+
+        assertTrue(wordValidator.isValidWord("apple"));
+        assertTrue(wordValidator.isValidWord("BLACK"));
+        assertTrue(wordValidator.isValidWord("Camel"));
+        assertFalse(wordValidator.isValidWord("DOGGIE"));
+        assertFalse(wordValidator.isValidWord("banana"));
+        assertFalse(wordValidator.isValidWord("dog"));
+
+
     }
 
     @Test
-    public void validWordIsAllLetters(){
+    public void checkIsAllLetters(){
         assertTrue(wordValidator.isAllLetters("apple"));
+
     }
 
     @Test
@@ -41,6 +52,14 @@ public class WordValidatorTest {
 
     @Test
     public void containsSymbolIsAllLetters(){
+
+        assertTrue(wordValidator.isAllLetters("APPLE"));
+        assertTrue(wordValidator.isAllLetters("Apple"));
+        assertTrue(wordValidator.isAllLetters("ApPlE"));
+        assertFalse(wordValidator.isAllLetters(""));
+        assertTrue(wordValidator.isAllLetters("banana"));
+        assertFalse(wordValidator.isAllLetters("a1ppl"));
+
         assertFalse(wordValidator.isAllLetters("a@ppl"));
     }
 }

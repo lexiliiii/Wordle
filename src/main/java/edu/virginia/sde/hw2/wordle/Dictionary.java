@@ -40,7 +40,6 @@ public class Dictionary {
         validateWordSet(wordSet, wordValidator);
         this.wordSet = wordSet;
         this.wordValidator = wordValidator;
-        this.size = wordSet.size();
     }
 
     private void validateWordSet(Set<String> wordSet, WordValidator wordValidator) {

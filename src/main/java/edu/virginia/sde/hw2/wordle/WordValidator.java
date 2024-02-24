@@ -41,9 +41,7 @@ public class WordValidator {
             }
         }
 
-        if(word.equals("")){
-            return false;
-        }
+        if(word.equals("")){ return false;}
 
         return true;
     }
