@@ -136,8 +136,10 @@ public class Game {
                 if(tryOne.isCorrect()) {
                     gameStatus = WIN;
                 }
-                if(guessesRemaining==0) {
-                gameStatus = LOSS;
+                else{
+                   if(guessesRemaining==0) {
+                    gameStatus = LOSS;
+                }
                 }
             }
         return tryOne;
