@@ -77,4 +77,12 @@ class GameTest {
         assertEquals(PLAYING, game.getGameStatus());
         assertFalse(game.isGameOver());
     }
+
+    @Test
+    void InvalidWordGetThrowsExceptions() {
+        var game = new Game();
+        assertThrows(IllegalWordException.class,
+                () -> game.submitGuess("huetf"));
+    }
+
 }
