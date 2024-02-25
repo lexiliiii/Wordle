@@ -70,6 +70,15 @@ class GameTest {
     }
 
     @Test
+    public void test_submitGuess_Status_Boundary_WIN() {
+        var game = new Game(defaultGuessesDictionary, "TREND", 1, PLAYING);
+        game.submitGuess("TREND");
+        assertEquals(0, game.getGuessesRemaining());
+        assertEquals(WIN, game.getGameStatus());
+        assertTrue(game.isGameOver());
+    }
+
+    @Test
     public void test_submitGuess_Status_PLAYING() {
         var game = new Game(defaultGuessesDictionary, "TREND", 6, PLAYING);
         game.submitGuess("white");
