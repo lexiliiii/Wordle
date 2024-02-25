@@ -33,7 +33,6 @@ class GameTest {
         assertEquals(6, game.getGuessesRemaining());
         assertEquals(PLAYING, game.getGameStatus());
     }
-
     @Test
     public void test_isGameOver_WIN_True() {
         var game = new Game(defaultGuessesDictionary, "TREND", 5, WIN);
@@ -41,4 +40,12 @@ class GameTest {
         assertEquals(WIN, game.getGameStatus());
         assertTrue(game.isGameOver());
     }
+    @Test
+    public void RemainingGuess_Test() {
+        var game = new Game(defaultGuessesDictionary, "TREND", 7, WIN);
+
+        assertEquals(7, game.getGuessesRemaining());
+    }
+
+
 }
