@@ -126,6 +126,11 @@ class GameTest {
         Exception exception=assertThrows(IllegalArgumentException.class,()->new Game(defaultGuessesDictionary, "TREND", 2, null));
         assertEquals("gameStatus cannot be null",exception.getMessage());
     }
+    @Test
+    void InvalidGuessesRemaingthrowsException() {
+        Exception exception=assertThrows(IllegalArgumentException.class,()->new Game(defaultGuessesDictionary, "TREND", -1, PLAYING));
+        assertEquals("The starting guessesRemaining value must be non-negative",exception.getMessage());
+    }
 
 
 
