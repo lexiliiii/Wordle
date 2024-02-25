@@ -61,6 +61,9 @@ public class GuessResult {
      */
     public boolean isCorrect() {
         //TODO: Stub
+        if(getGuess().equalsIgnoreCase(getAnswer())){
+            return true;
+        }
         return false;
     }
 
@@ -102,6 +105,10 @@ public class GuessResult {
         }
         return result;
     }
+    //public static void main(String[] args){
+        //GuessResult a = new  GuessResult("wocao","wocao");
+       // System.out.println(a.isCorrect());
+    //}
 
 
 }
