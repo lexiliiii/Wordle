@@ -1,5 +1,7 @@
 package edu.virginia.sde.hw2.wordle;
 
+import com.ibm.virtualization.management.GuestOSInfoRetrievalException;
+
 import java.util.Random;
 
 import static edu.virginia.sde.hw2.wordle.GameStatus.*;
@@ -120,7 +122,14 @@ public class Game {
      */
     public GuessResult submitGuess(String guess) {
         //TODO: Stub
-        return null;
+        GuessResult tryOne=new GuessResult(guess,answer);
+        if(guessesRemaining>0){
+                guessesRemaining--;
+                if(guessesRemaining==0) {
+                gameStatus = LOSS;
+                }
+            }
+        return tryOne;
     }
 
     private static void validate(Dictionary guessDictionary, String answer, int guessesRemaining, GameStatus gameStatus) {
@@ -163,4 +172,5 @@ public class Game {
             throw new IllegalArgumentException("The game cannot be in a PLAYING state with zero guesses remaining");
         }
     }
+
 }
