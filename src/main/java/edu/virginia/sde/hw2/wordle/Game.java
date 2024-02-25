@@ -126,6 +126,10 @@ public class Game {
         if(!guessDictionary.contains(tryOne.getGuess())){
             throw new IllegalWordException("INPUT GUESS IS NOT A VALID WORD");
         }
+        if(isGameOver()==true){
+            throw new GameAlreadyOverException("The game is already ended");
+        }
+
 
         if(guessesRemaining>0){
                 guessesRemaining--;
