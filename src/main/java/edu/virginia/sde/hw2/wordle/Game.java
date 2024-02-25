@@ -125,6 +125,7 @@ public class Game {
         GuessResult tryOne=new GuessResult(guess,answer);
         if(guessesRemaining>0){
                 guessesRemaining--;
+                gameStatus=WIN;
                 if(guessesRemaining==0) {
                 gameStatus = LOSS;
                 }
