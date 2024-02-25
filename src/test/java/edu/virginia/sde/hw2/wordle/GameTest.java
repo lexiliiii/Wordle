@@ -9,11 +9,13 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class GameTest {
     private static Dictionary defaultGuessesDictionary, defaultAnswersDictionary;
+
     @BeforeAll
     public static void initialize() {
         defaultGuessesDictionary = DefaultDictionaries.getGuessesDictionary();
         defaultAnswersDictionary = DefaultDictionaries.getAnswersDictionary();
     }
+
     @Test
     public void test_init_zeroArgumentConstructor() {
         var game = new Game();
@@ -33,6 +35,7 @@ class GameTest {
         assertEquals(6, game.getGuessesRemaining());
         assertEquals(PLAYING, game.getGameStatus());
     }
+
     @Test
     public void test_isGameOver_WIN_True() {
         var game = new Game(defaultGuessesDictionary, "TREND", 5, WIN);
@@ -40,12 +43,14 @@ class GameTest {
         assertEquals(WIN, game.getGameStatus());
         assertTrue(game.isGameOver());
     }
+
     @Test
     public void RemainingGuess_Test() {
         var game = new Game(defaultGuessesDictionary, "TREND", 7, WIN);
 
         assertEquals(7, game.getGuessesRemaining());
     }
+
     @Test
     public void test_isGameOver_Loss_True() {
         var game1 = new Game(defaultGuessesDictionary, "TREND", 1, PLAYING);
@@ -54,6 +59,7 @@ class GameTest {
         assertEquals(LOSS, game1.getGameStatus());
         assertTrue(game1.isGameOver());
     }
+
     @Test
     public void test_submitGuess_Status_WIN() {
         var game = new Game(defaultGuessesDictionary, "TREND", 4, PLAYING);
@@ -63,7 +69,12 @@ class GameTest {
         assertTrue(game.isGameOver());
     }
 
-
-
-
+    @Test
+    public void test_submitGuess_Status_PLAYING() {
+        var game = new Game(defaultGuessesDictionary, "TREND", 6, PLAYING);
+        game.submitGuess("white");
+        assertEquals(5, game.getGuessesRemaining());
+        assertEquals(PLAYING, game.getGameStatus());
+        assertFalse(game.isGameOver());
+    }
 }
