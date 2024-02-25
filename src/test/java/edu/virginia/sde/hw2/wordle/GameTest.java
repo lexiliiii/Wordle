@@ -104,6 +104,14 @@ class GameTest {
         assertThrows(NullPointerException.class,
                 () -> game.submitGuess(input));
     }
+    @Test
+    void EmptyDictionaryThrowsException() {
+        Dictionary newbook=new Dictionary();
+        Exception exception=assertThrows(IllegalArgumentException.class,()->new Game(newbook, "TREND", 4, PLAYING));
+        assertEquals("Cannot create a Game with an empty guessDictionary",exception.getMessage());
+
+    }
+
 
 
 
