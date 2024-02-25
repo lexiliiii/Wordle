@@ -85,4 +85,13 @@ class GameTest {
                 () -> game.submitGuess("huetf"));
     }
 
+    @Test
+    void GameAlreadyWINThrowsException() {
+        var game1 = new Game(defaultGuessesDictionary, "TREND", 2, WIN);
+        assertThrows(GameAlreadyOverException.class,
+                () -> game1.submitGuess("white"));
+    }
+
+
+
 }
