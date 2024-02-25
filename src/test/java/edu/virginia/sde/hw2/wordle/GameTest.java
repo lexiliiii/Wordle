@@ -91,6 +91,13 @@ class GameTest {
         assertThrows(GameAlreadyOverException.class,
                 () -> game1.submitGuess("white"));
     }
+    @Test
+    void EmptyInputGetThrowsExceptions() {
+        var game = new Game();
+        assertThrows(IllegalArgumentException.class,
+                () -> game.submitGuess(""));
+    }
+
 
 
 
