@@ -122,13 +122,18 @@ public class Game {
      */
     public GuessResult submitGuess(String guess) {
         //TODO: Stub
+        GuessResult tryOne=new GuessResult(guess,answer);
         if(guessesRemaining>0){
             guessesRemaining--;
-            gameStatus=WIN;
-                if(guessesRemaining==0) {
-                    gameStatus = LOSS;
-
+            if(tryOne.isCorrect()) {
+                gameStatus = WIN;
             }
+
+            else{
+                gameStatus = LOSS;
+            }
+
+
         }
 
         return null;
