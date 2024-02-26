@@ -122,6 +122,7 @@ public class Game {
      */
     public GuessResult submitGuess(String guess) {
         //TODO: Stub
+
         GuessResult tryOne=new GuessResult(guess,answer);
         if(!guessDictionary.contains(tryOne.getGuess())){
             throw new IllegalWordException("INPUT GUESS IS NOT A VALID WORD");
@@ -141,6 +142,7 @@ public class Game {
             }
         }
        return tryOne;
+
     }
 
     private static void validate(Dictionary guessDictionary, String answer, int guessesRemaining, GameStatus gameStatus) {
