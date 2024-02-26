@@ -53,6 +53,7 @@ class GameTest {
         assertEquals(LOSS, game1.getGameStatus());
         assertTrue(game1.isGameOver());
     }
+
     @Test
     public void test_submitGuess_Status_PLAYING() {
         var game = new Game(defaultGuessesDictionary, "TREND", 6, PLAYING);
@@ -61,6 +62,16 @@ class GameTest {
         assertEquals(PLAYING, game.getGameStatus());
         assertFalse(game.isGameOver());
     }
+
+    @Test
+    public void test_submitGuess_Equivalence_PLAYING() {
+        var game = new Game(defaultGuessesDictionary, "TREND", 5, PLAYING);
+        game.submitGuess("white");
+        assertEquals(4, game.getGuessesRemaining());
+        assertEquals(PLAYING, game.getGameStatus());
+        assertFalse(game.isGameOver());
+    }
+
     @Test
     public void test_submitGuess_Status_Boundary_WIN() {
         var game = new Game(defaultGuessesDictionary, "TREND", 1, PLAYING);
@@ -77,6 +88,7 @@ class GameTest {
         assertEquals(WIN, game.getGameStatus());
         assertTrue(game.isGameOver());
     }
+
 
 
 
