@@ -140,7 +140,7 @@ public class Game {
                 gameStatus = LOSS;
             }
         }
-       return null;
+       return tryOne;
     }
 
     private static void validate(Dictionary guessDictionary, String answer, int guessesRemaining, GameStatus gameStatus) {
