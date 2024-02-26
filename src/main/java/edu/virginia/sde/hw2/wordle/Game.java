@@ -129,8 +129,8 @@ public class Game {
                 gameStatus = WIN;
             }
 
-            else{
-                gameStatus = LOSS;
+            if(guessesRemaining==0){
+                gameStatus=LOSS;
             }
 
 
