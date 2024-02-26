@@ -160,6 +160,13 @@ class GameTest {
         String message="Answer " +answer+" is not in the provided Guess Dictionary";
         assertEquals( message, exception.getMessage());
     }
+    @Test
+    public void RemainingGuess_Test() {
+        var game = new Game(defaultGuessesDictionary, "TREND", 7, WIN);
+
+        assertEquals(7, game.getGuessesRemaining());
+    }
+
 
 
 
