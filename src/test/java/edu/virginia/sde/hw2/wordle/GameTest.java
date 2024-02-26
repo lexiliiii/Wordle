@@ -44,7 +44,6 @@ class GameTest {
         assertTrue(game.isGameOver());
     }
 
-
     @Test
     public void test_isGameOver_Loss_True() {
         var game1 = new Game(defaultGuessesDictionary, "TREND", 1, PLAYING);
@@ -166,25 +165,6 @@ class GameTest {
 
         assertEquals(7, game.getGuessesRemaining());
     }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 }
