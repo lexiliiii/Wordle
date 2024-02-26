@@ -124,7 +124,7 @@ public class Game {
         //TODO: Stub
         if(guessesRemaining>0){
             guessesRemaining--;
-
+            gameStatus=WIN;
                 if(guessesRemaining==0) {
                     gameStatus = LOSS;
 
