@@ -122,27 +122,7 @@ public class Game {
      */
     public GuessResult submitGuess(String guess) {
         //TODO: Stub
-        GuessResult tryOne=new GuessResult(guess,answer);
-        if(!guessDictionary.contains(tryOne.getGuess())){
-            throw new IllegalWordException("INPUT GUESS IS NOT A VALID WORD");
-        }
-        if(isGameOver()==true){
-            throw new GameAlreadyOverException("The game is already ended");
-        }
-
-
-        if(guessesRemaining>0){
-                guessesRemaining--;
-                if(tryOne.isCorrect()) {
-                    gameStatus = WIN;
-                }
-                else{
-                   if(guessesRemaining==0) {
-                    gameStatus = LOSS;
-                }
-                }
-            }
-        return tryOne;
+      return null;
     }
 
     private static void validate(Dictionary guessDictionary, String answer, int guessesRemaining, GameStatus gameStatus) {
