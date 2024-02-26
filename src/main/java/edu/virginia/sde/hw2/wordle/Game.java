@@ -1,7 +1,4 @@
 package edu.virginia.sde.hw2.wordle;
-
-import com.ibm.virtualization.management.GuestOSInfoRetrievalException;
-
 import java.util.Random;
 
 import static edu.virginia.sde.hw2.wordle.GameStatus.*;
@@ -130,8 +127,6 @@ public class Game {
         if(isGameOver()==true){
             throw new GameAlreadyOverException("The game is already ended");
         }
-
-
         guessesRemaining--;
         if(tryOne.isCorrect()) {
             gameStatus = WIN;
