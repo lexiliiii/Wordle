@@ -123,7 +123,9 @@ public class Game {
     public GuessResult submitGuess(String guess) {
         //TODO: Stub
         guessesRemaining--;
-        gameStatus=LOSS;
+        if(guessesRemaining==0) {
+            gameStatus = LOSS;
+        }
        return null;
     }
 
