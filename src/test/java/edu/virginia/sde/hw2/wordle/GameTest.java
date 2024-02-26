@@ -101,6 +101,13 @@ class GameTest {
                 () -> game1.submitGuess("white"));
     }
     @Test
+    void GameAlreadyLOSSThrowsException() {
+        var game2 = new Game(defaultGuessesDictionary, "TREND", 0, LOSS);
+        assertThrows(GameAlreadyOverException.class,
+                () -> game2.submitGuess("white"));
+    }
+
+    @Test
     void EmptyInputGetThrowsExceptions() {
         var game = new Game();
         assertThrows(IllegalArgumentException.class,
@@ -153,7 +160,6 @@ class GameTest {
         Exception exception = assertThrows(IllegalArgumentException.class, () -> new Game(defaultGuessesDictionary, answer, 2, PLAYING));
         String message="Answer " +answer+" is not in the provided Guess Dictionary";
         assertEquals( message, exception.getMessage());
-
     }
 
 
