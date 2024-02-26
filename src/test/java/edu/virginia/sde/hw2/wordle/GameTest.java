@@ -100,6 +100,14 @@ class GameTest {
         assertThrows(GameAlreadyOverException.class,
                 () -> game1.submitGuess("white"));
     }
+    @Test
+    void GameAlreadyLOSSThrowsException() {
+        var game2 = new Game(defaultGuessesDictionary, "TREND", 0, LOSS);
+        assertThrows(GameAlreadyOverException.class,
+                () -> game2.submitGuess("white"));
+    }
+
+
 
 
 
