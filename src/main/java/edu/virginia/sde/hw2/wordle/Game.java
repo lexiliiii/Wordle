@@ -125,7 +125,7 @@ public class Game {
 
         GuessResult tryOne=new GuessResult(guess,answer);
         if(!guessDictionary.contains(tryOne.getGuess())){
-            throw new IllegalWordException("INPUT GUESS IS NOT A VALID WORD");
+            throw new IllegalWordException("INPUT IS NOT A VALID WORD");
         }
 
         if(guessesRemaining>0){
