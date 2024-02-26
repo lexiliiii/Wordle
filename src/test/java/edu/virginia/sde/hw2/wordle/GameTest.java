@@ -153,6 +153,13 @@ class GameTest {
         assertEquals("Answer cannot be null",exception.getMessage());
 
     }
+    @Test
+    void answernotindictionaryThrowsException() {
+        String answer = "wocao";
+        Exception exception = assertThrows(IllegalArgumentException.class, () -> new Game(defaultGuessesDictionary, answer, 2, PLAYING));
+        String message="Answer " +answer+" is not in the provided Guess Dictionary";
+        assertEquals( message, exception.getMessage());
+    }
 
 
 
