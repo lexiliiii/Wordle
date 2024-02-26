@@ -8,7 +8,7 @@
 
 ## To Run
 
-[Add a brief description of how to build and run your .jar file based on this code]
+[We use"java -jar build/libs/PlayWordle.jar" to start the game. And then we can type any 5-letter word we want and according to the colors to change our guess. Gray represents none of the letters are in the answer, yellow represents the letter is in the answer but not at right position. Green represents that the letter is exactly at the right position. By default, we have 6 chances, invalid answer does not waste our chance.]
 
 ## Contributions
 
