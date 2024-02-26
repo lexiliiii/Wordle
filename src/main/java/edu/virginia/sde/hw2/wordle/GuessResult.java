@@ -61,9 +61,6 @@ public class GuessResult {
      */
     public boolean isCorrect() {
         //TODO: Stub
-        if(getGuess().equalsIgnoreCase(getAnswer())){
-            return true;
-        }
         return false;
     }
 
