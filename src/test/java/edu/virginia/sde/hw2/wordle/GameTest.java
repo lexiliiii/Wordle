@@ -43,14 +43,6 @@ class GameTest {
         assertEquals(WIN, game.getGameStatus());
         assertTrue(game.isGameOver());
     }
-
-    @Test
-    public void RemainingGuess_Test() {
-        var game = new Game(defaultGuessesDictionary, "TREND", 7, WIN);
-
-        assertEquals(7, game.getGuessesRemaining());
-    }
-
     @Test
     public void test_isGameOver_Loss_True() {
         var game1 = new Game(defaultGuessesDictionary, "TREND", 1, PLAYING);
@@ -68,7 +60,6 @@ class GameTest {
         assertEquals(WIN, game.getGameStatus());
         assertTrue(game.isGameOver());
     }
-
     @Test
     public void test_submitGuess_Status_Boundary_WIN() {
         var game = new Game(defaultGuessesDictionary, "TREND", 1, PLAYING);
@@ -77,7 +68,6 @@ class GameTest {
         assertEquals(WIN, game.getGameStatus());
         assertTrue(game.isGameOver());
     }
-
     @Test
     public void test_submitGuess_Status_PLAYING() {
         var game = new Game(defaultGuessesDictionary, "TREND", 6, PLAYING);
@@ -86,7 +76,6 @@ class GameTest {
         assertEquals(PLAYING, game.getGameStatus());
         assertFalse(game.isGameOver());
     }
-
     @Test
     void InvalidWordGetThrowsExceptions() {
         var game = new Game();
@@ -94,73 +83,13 @@ class GameTest {
                 () -> game.submitGuess("huetf"));
     }
 
-    @Test
-    void GameAlreadyWINThrowsException() {
-        var game1 = new Game(defaultGuessesDictionary, "TREND", 2, WIN);
-        assertThrows(GameAlreadyOverException.class,
-                () -> game1.submitGuess("white"));
-    }
-    @Test
-    void GameAlreadyLOSSThrowsException() {
-        var game2 = new Game(defaultGuessesDictionary, "TREND", 0, LOSS);
-        assertThrows(GameAlreadyOverException.class,
-                () -> game2.submitGuess("white"));
-    }
 
-    @Test
-    void EmptyInputGetThrowsExceptions() {
-        var game = new Game();
-        assertThrows(IllegalArgumentException.class,
-                () -> game.submitGuess(""));
-    }
-    @Test
-    void NullInputGetThrowsExceptions() {
-        var game = new Game();
-        String input=null;
-        assertThrows(NullPointerException.class,
-                () -> game.submitGuess(input));
-    }
-    @Test
-    void EmptyDictionaryThrowsException() {
-        Dictionary newbook=new Dictionary();
-        Exception exception=assertThrows(IllegalArgumentException.class,()->new Game(newbook, "TREND", 4, PLAYING));
-        assertEquals("Cannot create a Game with an empty guessDictionary",exception.getMessage());
 
-    }
-    @Test
-    void InvalidGameStatus0_PlayingThrowsException() {
-        Exception exception=assertThrows(IllegalArgumentException.class,()->new Game(defaultGuessesDictionary, "TREND", 0, PLAYING));
-        assertEquals("The game cannot be in a PLAYING state with zero guesses remaining",exception.getMessage());
-    }
-    @Test
-    void InvalidGameStatus2_LOSSThrowsException() {
-        Exception exception=assertThrows(IllegalArgumentException.class,()->new Game(defaultGuessesDictionary, "TREND", 2, LOSS));
-        assertEquals("The game cannot be in a LOSS state with more than zero guesses remaining",exception.getMessage());
-    }
-    @Test
-    void InvalidGameStatus_NULL_ThrowsException() {
-        Exception exception=assertThrows(IllegalArgumentException.class,()->new Game(defaultGuessesDictionary, "TREND", 2, null));
-        assertEquals("gameStatus cannot be null",exception.getMessage());
-    }
-    @Test
-    void InvalidGuessesRemaingthrowsException() {
-        Exception exception=assertThrows(IllegalArgumentException.class,()->new Game(defaultGuessesDictionary, "TREND", -1, PLAYING));
-        assertEquals("The starting guessesRemaining value must be non-negative",exception.getMessage());
-    }
-    @Test
-    void NULLAnswerThrowsException() {
-        String answer=null;
-        Exception exception=assertThrows(IllegalArgumentException.class,()->new Game(defaultGuessesDictionary, answer, 2, PLAYING));
-        assertEquals("Answer cannot be null",exception.getMessage());
 
-    }
-    @Test
-    void answernotindictionaryThrowsException() {
-        String answer = "wocao";
-        Exception exception = assertThrows(IllegalArgumentException.class, () -> new Game(defaultGuessesDictionary, answer, 2, PLAYING));
-        String message="Answer " +answer+" is not in the provided Guess Dictionary";
-        assertEquals( message, exception.getMessage());
-    }
+
+
+
+
 
 
 

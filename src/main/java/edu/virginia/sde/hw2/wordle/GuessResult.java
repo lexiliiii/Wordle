@@ -64,7 +64,9 @@ public class GuessResult {
         if(getGuess().equalsIgnoreCase(getAnswer())){
             return true;
         }
-        return false;
+        else {
+            return false;
+        }
     }
 
     /**
