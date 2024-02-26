@@ -126,6 +126,12 @@ class GameTest {
         assertEquals("Cannot create a Game with an empty guessDictionary",exception.getMessage());
 
     }
+    @Test
+    void InvalidGameStatus0_PlayingThrowsException() {
+        Exception exception=assertThrows(IllegalArgumentException.class,()->new Game(defaultGuessesDictionary, "TREND", 0, PLAYING));
+        assertEquals("The game cannot be in a PLAYING state with zero guesses remaining",exception.getMessage());
+    }
+
 
 
 
