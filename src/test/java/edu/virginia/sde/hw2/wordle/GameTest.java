@@ -112,6 +112,14 @@ class GameTest {
         assertThrows(IllegalArgumentException.class,
                 () -> game.submitGuess(""));
     }
+    @Test
+    void NullInputGetThrowsExceptions() {
+        var game = new Game();
+        String input=null;
+        assertThrows(NullPointerException.class,
+                () -> game.submitGuess(input));
+    }
+
 
 
 
